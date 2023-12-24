@@ -22,29 +22,6 @@
 #define GPIO_BIT(b) ((uint64_t)1<<(b))
 
 struct HardwareMapping matrix_hardware_mappings[] = {
-  /* 
-   * A custom hardware mapping used by my personal matrix dashboard project, as well as my RPiToHUB75 Adapter.
-   */
-  {
-    .name          = "muramasa",
-
-    .output_enable = GPIO_BIT(21),
-    .clock         = GPIO_BIT(26),
-    .strobe        = GPIO_BIT(20),
-
-    .a             = GPIO_BIT(13),
-    .b             = GPIO_BIT(12),
-    .c             = GPIO_BIT(19),
-    .d             = GPIO_BIT(16),
-    .e             = GPIO_BIT(1),  /* Needs manual wiring, see README.md */
-
-    .p0_r1         = GPIO_BIT(11),
-    .p0_g1         = GPIO_BIT(8),
-    .p0_b1         = GPIO_BIT(0),
-    .p0_r2         = GPIO_BIT(5),
-    .p0_g2         = GPIO_BIT(7),
-    .p0_b2         = GPIO_BIT(6),
-  },
   /*
    * The regular hardware mapping described in the wiring.md and used
    * by the adapter PCBs.
@@ -89,6 +66,30 @@ struct HardwareMapping matrix_hardware_mappings[] = {
     .p2_b2         = GPIO_BIT(21),
   },
 
+  /* 
+   * A custom hardware mapping used by my personal matrix dashboard project, as well as my RPiToHUB75 Adapter.
+   */
+  {
+    .name          = "muramasa",
+
+    .output_enable = GPIO_BIT(21),
+    .clock         = GPIO_BIT(26),
+    .strobe        = GPIO_BIT(20),
+
+    .a             = GPIO_BIT(13),
+    .b             = GPIO_BIT(12),
+    .c             = GPIO_BIT(19),
+    .d             = GPIO_BIT(16),
+    .e             = GPIO_BIT(1),  /* Needs manual wiring, see README.md */
+
+    .p0_r1         = GPIO_BIT(11),
+    .p0_g1         = GPIO_BIT(8),
+    .p0_b1         = GPIO_BIT(0),
+    .p0_r2         = GPIO_BIT(5),
+    .p0_g2         = GPIO_BIT(7),
+    .p0_b2         = GPIO_BIT(6),
+  },
+  
   /*
    * This is used if you have an Adafruit HAT in the default configuration
    */
